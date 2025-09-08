@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco World</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- tailwind css and daisyui cdn -->
     <link
@@ -23,42 +23,81 @@
     />
   </head>
   <body>
-   <head>
-    <nav>
+    <head>
+      <nav>
         <div class="navbar bg-base-100 shadow-sm md:px-10 bg-[#15803d]">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="lg:hidden p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="lg:hidden p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li><a>About</a></li>
+                <li>
+                  <a>Gallery</a>
+                </li>
+                <li><a>Plant a Tree</a></li>
+              </ul>
+            </div>
+            <a class="text-xl text-white font-bold">Eco World</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li class="text-white"><a>About</a></li>
+              <li class="text-white">
+                <a>Gallery</a>
+              </li>
+              <li class="text-white"><a>Plant a Tree</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <button
+              class="btn rounded-full bg-[#facc15] text-green-800 border-none"
+            >
+              Plant a Tree
+            </button>
+          </div>
+        </div>
+      </nav>
+    </head>
+
+    <!-- hero-section -->
+    <section class="flex justify-between items-center bg-[#cff0dc]">
+      <div>
+        <img src="./assets/hero-leaf1.png" alt="">
       </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>About</a></li>
-        <li>
-        <a>Gallery</a>
-      </li>
-        <li><a>Plant a Tree</a></li>
-      </ul>
-    </div>
-    <a class="text-xl text-white font-bold">Eco World</a>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li class="text-white"><a>About</a></li>
-      <li class="text-white">
-        <a>Gallery</a>
-      </li>
-      <li class="text-white"><a>Plant a Tree</a></li>
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <button class="btn rounded-full bg-[#facc15] text-green-800 border-none">Plant a Tree</button>
-  </div>
-</div>
-    </nav>
-   </head>
+      <div class="text-center">
+        <h1 class="md:text-4xl font-bold mb-1 md:mb-3">Plant a Tree, Grow a Future</h1>
+        <p class=" text-[10px] md:text-[15px] mb-1 md:mb-3 opacity-70">
+          Join our mission to plant 1 million trees and make the Earth greener
+          for future generations.
+        </p>
+         <button
+              class="btn rounded-full bg-[#facc15] text-green-800 border-none"
+            >
+              Get Involved
+            </button>
 
-
+      </div>
+      <div>
+        <img src="./assets/hero-leaf2.png" alt="">
+      </div>
+    </section>
   </body>
 </html>
