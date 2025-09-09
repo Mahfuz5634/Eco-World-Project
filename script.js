@@ -3,7 +3,15 @@ const cardContainer=document.getElementById('card-container');
 const cartContainer=document.getElementById('cart-container');
 const modalContainer =document.getElementById('modal-container');
 
+const createLoader = () => {
+  return `<div class="flex  mx-auto justify-center items-center p-5">
+            <span class="loading loading-dots loading-xl"></span>
+          </div>`;
+};
+
 const loadcategories =()=>{
+   
+     categoriesContainer.innerHTML = createLoader(); 
     url='https://openapi.programming-hero.com/api/categories';
     fetch(url)
     .then(res=>res.json())
@@ -11,6 +19,7 @@ const loadcategories =()=>{
 }
 
 const loadCategoriesDisplay =(data)=>{
+   categoriesContainer.innerHTML = '';
    for(const dt of data){
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
@@ -28,6 +37,7 @@ loadcategories();
 // tree section
 
 const loadAutotree =()=>{
+    cardContainer.innerHTML = createLoader()
     url='https://openapi.programming-hero.com/api/plants';
     fetch(url)
     .then(res=>res.json())
@@ -35,6 +45,7 @@ const loadAutotree =()=>{
 }
 
 const displayAutotree =(data)=>{
+   cardContainer.innerHTML = '';
    for(const dt of data){
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
@@ -74,6 +85,7 @@ categoriesContainer.addEventListener('click',(event)=>{
 })
 
 const clickeddisplayCategories =(id)=>{
+   cardContainer.innerHTML = createLoader();
    url=`https://openapi.programming-hero.com/api/category/${id}`
    fetch(url)
    .then(res=>res.json())
@@ -81,6 +93,7 @@ const clickeddisplayCategories =(id)=>{
 }
 
 const displayclickedtree =(data)=>{
+    cardContainer.innerHTML = '';
    cardContainer.innerHTML='';
    for(const dt of data){
    const newcategories=document.createElement('div');
@@ -177,6 +190,7 @@ cardContainer.addEventListener("click", (event) => {
 })
 
 const loadmodal =(id)=>{
+     modalContainer.innerHTML = createLoader();
      url=`https://openapi.programming-hero.com/api/plant/${id}`
      fetch(url)
      .then(res=>res.json())
@@ -184,6 +198,7 @@ const loadmodal =(id)=>{
 }
 
 const showmodal =(data)=>{
+    modalContainer.innerHTML='';
   modalContainer.innerHTML='';
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
