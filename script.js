@@ -57,7 +57,7 @@ const displayAutotree =(data)=>{
    cardContainer.appendChild(newcategories);
    }
 }
-loadAutotree ()
+// loadAutotree ()
 
 //clicked categories to load start here
 categoriesContainer.addEventListener('click',(event)=>{
