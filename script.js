@@ -1,6 +1,7 @@
 const categoriesContainer=document.getElementById('Categories-container');
 const cardContainer=document.getElementById('card-container');
 const cartContainer=document.getElementById('cart-container');
+const modalContainer =document.getElementById('modal-container');
 
 const loadcategories =()=>{
     url='https://openapi.programming-hero.com/api/categories';
@@ -37,11 +38,11 @@ const displayAutotree =(data)=>{
    for(const dt of data){
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
-    <div class="md:h-full md:w-[260px] bg-white p-8 rounded-2xl flex flex-col">
+    <div  class="md:h-full md:w-[260px] bg-white p-8 rounded-2xl flex flex-col">
   <div>
     <img class="w-full h-[120px] mb-2 rounded-[5px]" src="${dt.image}" alt="">
   </div>
-  <h1 class="text-[15px]">${dt.name}</h1>
+  <h1 id="${dt.id}" class="text-[15px] ">${dt.name}</h1>
   <p class="text-[10px] mb-2">${dt.description}</p>
   <div class="flex-1"></div>
   <div class="flex justify-between items-center mb-2">
@@ -84,11 +85,11 @@ const displayclickedtree =(data)=>{
    for(const dt of data){
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
-    <div class="md:h-full md:w-[260px] bg-white p-8 rounded-2xl flex flex-col">
+    <div  class="md:h-full md:w-[260px] bg-white p-8 rounded-2xl flex flex-col">
   <div>
     <img class="w-full h-[120px] mb-2 rounded-[5px]" src="${dt.image}" alt="">
   </div>
-  <h1 class="text-[15px]">${dt.name}</h1>
+  <h1 id="${dt.id}" class="text-[15px] ">${dt.name}</h1>
   <p class="text-[10px] mb-2">${dt.description}</p>
   <div class="flex-1"></div>
   <div class="flex justify-between items-center mb-2">
@@ -168,3 +169,52 @@ cartContainer.addEventListener("click", (event) => {
   }
 });
 
+
+// modal part start here 
+
+cardContainer.addEventListener("click", (event) => {
+   loadmodal(event.target.id);
+})
+
+const loadmodal =(id)=>{
+     url=`https://openapi.programming-hero.com/api/plant/${id}`
+     fetch(url)
+     .then(res=>res.json())
+     .then(data=>showmodal(data.plants))  // এখানে data.plants না, একটিমাত্র plant object আসবে
+}
+
+const showmodal =(data)=>{
+  modalContainer.innerHTML='';
+   const newcategories=document.createElement('div');
+   newcategories.innerHTML=`
+   <div class="bg-white rounded-xl p-5 flex flex-col items-center text-center space-y-3">
+  <!-- Image -->
+  <div class="w-full h-[160px]">
+    <img class="w-full h-full object-cover rounded-lg" src="${data.image}" alt="${data.name}">
+  </div>
+
+  <!-- Title -->
+  <h1 id="${data.id}" class="text-lg font-semibold text-gray-800">${data.name}</h1>
+
+  <!-- Description -->
+  <p class="text-sm text-gray-600 leading-relaxed">${data.description}</p>
+
+  <!-- Category & Price -->
+  <div class="flex justify-between items-center w-full mt-2">
+    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-md text-xs font-medium">
+      ${data.category}
+    </span>
+    <span class="text-base font-bold text-gray-800">$${data.price}</span>
+  </div>
+</div>
+
+   `
+   modalContainer.appendChild(newcategories);
+
+   // modal open
+   document.getElementById('my_modal_2').showModal();
+}
+
+
+    
+    
