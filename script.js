@@ -1,5 +1,6 @@
 const categoriesContainer=document.getElementById('Categories-container');
 const cardContainer=document.getElementById('card-container');
+const cartContainer=document.getElementById('cart-container');
 
 const loadcategories =()=>{
     url='https://openapi.programming-hero.com/api/categories';
@@ -103,3 +104,70 @@ const displayclickedtree =(data)=>{
    cardContainer.appendChild(newcategories);
    }
 }
+
+// cart-section
+cardContainer.addEventListener("click", (event) => {
+  if(event.target && event.target.tagName === "BUTTON") {
+    const button = event.target;
+
+    const card = button.parentNode;
+
+    let productName = "";
+    let productPrice = "";
+
+    card.childNodes.forEach(node => {
+      if(node.tagName === "H1") {
+        productName = node.innerText;
+      }
+      if(node.tagName === "DIV") {
+        const span = node.querySelector("span");
+        if(span) {
+          productPrice = span.innerText;
+        }
+      }
+    });
+
+    console.log("Product Name:", productName);
+    console.log("Product Price:", productPrice);
+
+    const  newcart=document.createElement('div');
+    newcart.innerHTML=`
+      <div class="flex justify-between items-center bg-[#f0fdf4] p-2 rounded-1xl mb-2 ">
+                 <div>
+                  <h1 class="text-[14px]">${productName}e</h1>
+                  <p  class="text-[10px]">$<span>${productPrice}</span> ❌1</p>
+                 </div>
+                 <div>
+                  <button>❌</button>
+                 </div>
+               </div>
+    
+    `
+   cartContainer.appendChild(newcart);
+   const tprice=document.getElementById('total-price')
+   const price=Number(tprice.innerText)+Number(productPrice);
+   tprice.innerText=price;
+
+
+
+
+  }
+});
+
+cartContainer.addEventListener("click", (event) => {
+  if(event.target && event.target.tagName === "BUTTON") {
+    const button = event.target;
+
+    const itemDiv = button.closest("div.flex");
+
+    if(itemDiv) {
+      const sprice = itemDiv.querySelector('span');
+      const priceValue = Number(sprice.innerText);
+      const tpriceEl = document.getElementById('total-price');
+      tpriceEl.innerText = Number(tpriceEl.innerText) - priceValue;
+
+      itemDiv.remove();
+    }
+  }
+});
+
