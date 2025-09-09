@@ -57,7 +57,7 @@ const displayAutotree =(data)=>{
    cardContainer.appendChild(newcategories);
    }
 }
-// loadAutotree ()
+loadAutotree ()
 
 //clicked categories to load start here
 categoriesContainer.addEventListener('click',(event)=>{
@@ -126,15 +126,12 @@ cardContainer.addEventListener("click", (event) => {
         }
       }
     });
-
-    console.log("Product Name:", productName);
-    console.log("Product Price:", productPrice);
-
     const  newcart=document.createElement('div');
+    newcart.innerHTML=''
     newcart.innerHTML=`
       <div class="flex justify-between items-center bg-[#f0fdf4] p-2 rounded-1xl mb-2 ">
                  <div>
-                  <h1 class="text-[14px]">${productName}e</h1>
+                  <h1 class="text-[14px]">${productName}</h1>
                   <p  class="text-[10px]">$<span>${productPrice}</span> ❌1</p>
                  </div>
                  <div>

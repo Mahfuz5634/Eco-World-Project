@@ -171,22 +171,22 @@
 </section>
 
 <!-- our impact section  -->
- <section class="bg-[#cff0dc]">
+ <section class="bg-[#cff0dc] h-full">
   <h1  class="text-center text-2xl font-semibold mb-5 pt-10">Our Impact</h1>
-  <div class="w-11/12 mx-auto flex justify-between items-center">
-    <div class="bg-white w-[350px] h-[120px] flex justify-center items-center rounded-2xl">
+  <div class="w-11/12 mx-auto md:flex justify-between items-center pb-12">
+    <div class="bg-white md:w-[350px] md:h-[120px] flex justify-center items-center rounded-2xl mb-2 md:mb-0">
        <div class="flex flex-col justify-center items-center">
          <h1 class="text-3xl font-semibold text-[#15803d] mt-2">500K+</h1>
          <p class="text-[15px]">Tress Planted</p>
        </div>
    </div>
-   <div class="bg-white w-[350px] h-[120px] flex justify-center items-center rounded-2xl">
+   <div class="bg-white md:w-[350px] md:h-[120px] flex justify-center items-center rounded-2xl mb-2 md:mb-0">
        <div class="flex flex-col justify-center items-center">
          <h1 class="text-3xl font-semibold text-[#15803d] mt-2">120+</h1>
          <p class="text-[15px]">Communities Involved</p>
        </div>
    </div>
-   <div class="bg-white w-[350px] h-[120px] flex justify-center items-center rounded-2xl">
+   <div class="bg-white md:w-[350px] md:h-[120px] flex justify-center items-center rounded-2xl mb-2 md:mb-0">
        <div class="flex flex-col justify-center items-center">
          <h1 class="text-3xl font-semibold text-[#15803d] mt-2">30+</h1>
          <p class="text-[15px]">Countries Reached</p>
@@ -196,6 +196,44 @@
   </div>
  </section>
 
+
+<!-- feedback-section  -->
+ <section class="flex flex-col justify-center items-center pt-10 bg-[#166534] pb-10">
+   <div class="mb-10">
+     <h1 class="text-2xl text-white font-semibold text-center mb-5">Plant a Tree Today</h1>
+   <div class="dropdown  p-5 bg-[#15803d] rounded-2xl md:w-[450px]">
+    <input type="text" placeholder="Your Name" class="input mb-2 w-full" />
+    <input type="text" placeholder="Your Email" class="input mb-2 w-full" />
+
+    <!-- Last input with dropdown -->
+    <label tabindex="0" class="input input-bordered w-full flex justify-between items-center cursor-pointer mb-2" id="lastInputLabel">
+      Numbers Of Trees
+      <span class="ml-2">▼</span>
+    </label>
+
+    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-full">
+      <li>
+        <button class="w-full text-left" onclick="document.getElementById('lastInputLabel').textContent='5';">5</button>
+      </li>
+      <li>
+        <button class="w-full text-left" onclick="document.getElementById('lastInputLabel').textContent='10';">10</button>
+      </li>
+      <li>
+        <button class="w-full text-left" onclick="document.getElementById('lastInputLabel').textContent='15';">15</button>
+      </li>
+    </ul>
+    <button class="btn btn-warning text-green-700  w-full">Donate Now</button>
+</div>
+
+  
+   </div>
+    
+
+ </section>
+
+ <footer class="bg-[#14532d]">
+   <p class="text-center text-white p-4">© 2025 Green Earth. All Rights Reserved.</p>
+ </footer>
 
 
 
