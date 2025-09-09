@@ -36,7 +36,7 @@ const displayAutotree =(data)=>{
    for(const dt of data){
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
-    <div class="h-full w-[260px] bg-white p-8 rounded-2xl flex flex-col">
+    <div class="md:h-full md:w-[260px] bg-white p-8 rounded-2xl flex flex-col">
   <div>
     <img class="w-full h-[120px] mb-2 rounded-[5px]" src="${dt.image}" alt="">
   </div>
@@ -83,7 +83,7 @@ const displayclickedtree =(data)=>{
    for(const dt of data){
    const newcategories=document.createElement('div');
    newcategories.innerHTML=`
-    <div class="h-full w-[260px] bg-white p-8 rounded-2xl flex flex-col">
+    <div class="md:h-full md:w-[260px] bg-white p-8 rounded-2xl flex flex-col">
   <div>
     <img class="w-full h-[120px] mb-2 rounded-[5px]" src="${dt.image}" alt="">
   </div>
