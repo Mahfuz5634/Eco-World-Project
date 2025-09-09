@@ -42,7 +42,7 @@ const displayAutotree =(data)=>{
   <div>
     <img class="w-full h-[120px] mb-2 rounded-[5px]" src="${dt.image}" alt="">
   </div>
-  <h1 id="${dt.id}" class="text-[15px] ">${dt.name}</h1>
+  <h1 id="${dt.id}" class="text-[15px] hover:text-[#15803d]">${dt.name}</h1>
   <p class="text-[10px] mb-2">${dt.description}</p>
   <div class="flex-1"></div>
   <div class="flex justify-between items-center mb-2">
